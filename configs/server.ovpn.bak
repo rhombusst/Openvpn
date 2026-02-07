@@ -1,0 +1,16 @@
+port 1194
+proto udp
+dev tun
+ca /storage/emulated/0/easy-rsa/pki/ca.crt
+cert /storage/emulated/0/easy-rsa/pki/issued/server.crt
+key /storage/emulated/0/easy-rsa/pki/private/server.key
+dh /storage/emulated/0/easy-rsa/pki/dh.pem
+tls-auth /storage/emulated/0/easy-rsa/pki/ta.key 0
+server 10.8.0.0 255.255.255.0
+ifconfig-pool-persist ipp.txt
+keepalive 10 120
+cipher AES-256-CBC
+persist-key
+persist-tun
+status openvpn-status.log
+verb 3
